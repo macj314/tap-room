@@ -53,23 +53,25 @@ class BagControl extends React.Component {
 
   handleBrewCoffee = (id) => {
     const selectedBag = this.state.masterBagList.filter(bag => bag.id === id)[0];
-    selectedBag.stock -= 0.36;
-    const updatedList = this.state.masterBagList.filter(bag => bag.id !== this.state.selectedBag.id).concat(selectedBag);
-    this.setState({
-      masterBagList : updatedList
-    });
+    if (selectedBag.stock >= 0.36){
+      selectedBag.stock = Math.round((selectedBag.stock - 0.36) * 100) / 100;
+      const updatedList = this.state.masterBagList.filter(bag => bag.id !== this.state.selectedBag.id).concat(selectedBag);
+      this.setState({
+        masterBagList : updatedList
+      });
+    } 
   }
 
-  // handleEditingBagInList = (bagToEdit) => {
-  //   const editedMasterBagList = this.state.masterBagList
-  //     .filter(bag => bag.id !== this.state.selectedBag.id)
-  //     .concat(bagToEdit);
-  //   this.setState({
-  //       masterBagList: editedMasterBagList,
-  //       editing: false,
-  //       selectedBag: null
-  //     });
-  // }
+  handleRestockBag = (id) => {
+    const selectedBag = this.state.masterBagList.filter(bag => bag.id === id)[0];
+    if (selectedBag.stock < 12){
+      selectedBag.stock = 12;
+      const updatedList = this.state.masterBagList.filter(bag => bag.id !== this.state.selectedBag.id).concat(selectedBag);
+      this.setState({
+        masterBagList : updatedList
+      });
+    } 
+  }
 
   render(){
     let currentlyVisibleState = null;
@@ -80,10 +82,12 @@ class BagControl extends React.Component {
     } 
     else if (this.state.selectedBag != null) {
       currentlyVisibleState = 
-      <BagDetail 
+      <BagDetail
         bag = {this.state.selectedBag} 
+
         onClickingDelete = {this.handleDeletingBag} 
-        onClickingBrewCoffee = {this.handleBrewCoffee} />
+        onClickingBrewCoffee = {this.handleBrewCoffee} 
+        onClickingRestock = {this.handleRestockBag}/>
         buttonText = "Return to Bag List";
     }
     else if (this.state.formVisibleOnPage) {
