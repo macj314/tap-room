@@ -7,8 +7,8 @@ function BagDetail(props){
   return (
     <React.Fragment>
       <h1>Bag Detail</h1>
-      <h3>{bag.location} - {bag.names}</h3>
-      <p><em>{bag.issue}</em></p>
+      <h3>{bag.name}</h3>
+      <h3>{bag.roast}</h3>
       <button onClick={()=> onClickingDelete(bag.id) }>Close Bag</button> { /* new code */ }
       <hr/>
     </React.Fragment>
