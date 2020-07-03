@@ -9,7 +9,8 @@ function BagDetail(props){
       <h1>Bag Detail</h1>
       <h3>{bag.name}</h3>
       <h3>{bag.roast}</h3>
-      <button onClick={()=> onClickingDelete(bag.id) }>Close Bag</button> { /* new code */ }
+      <h4>{bag.price}</h4>
+      <button onClick={()=> onClickingDelete(bag.id) }>Remove</button> { /* new code */ }
       <hr/>
     </React.Fragment>
   );

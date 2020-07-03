@@ -11,6 +11,7 @@ function BagList(props){
           whenBagClicked = { props.onBagSelection }
           name={bag.name}
           roast={bag.roast}
+          price={bag.price}
           id={bag.id}
           key={bag.id}/>
       )}
