@@ -52,9 +52,12 @@ class BagControl extends React.Component {
   }
 
   handleBrewCoffee = (id) => {
-    const selectedBag = this.state.masterBagList.filter(bag => bag.id === id);
+    const selectedBag = this.state.masterBagList.filter(bag => bag.id === id)[0];
     selectedBag.stock -= 0.36;
-    const updatedList = this.state.masterBagList.filter(bag => bag.id === id);
+    const updatedList = this.state.masterBagList.filter(bag => bag.id !== this.state.selectedBag.id).concat(selectedBag);
+    this.setState({
+      masterBagList : updatedList
+    });
   }
 
   // handleEditingBagInList = (bagToEdit) => {
