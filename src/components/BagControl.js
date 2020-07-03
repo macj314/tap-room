@@ -81,15 +81,12 @@ class BagControl extends React.Component {
         onClickingDelete = {this.handleDeletingBag} 
         onClickingEdit = {this.handleEditClick} />
         buttonText = "Return to Bag List";
-      // While our BagDetail component only takes placeholder data, we will eventually be passing the value of selectedBag as a prop.
     }
     else if (this.state.formVisibleOnPage) {
-      // This conditional needs to be updated to "else if."
       currentlyVisibleState = <NewBagForm onNewBagCreation={this.handleAddingNewBagToList}  />;
       buttonText = "Return to Bag List";
     } else {
       currentlyVisibleState = <BagList bagList={this.state.masterBagList} onBagSelection={this.handleChangingSelectedBag} />;
-      // Because a user will actually be clicking on the bag in the Bag component, we will need to pass our new handleChangingSelectedBag method as a prop.
       buttonText = "Add Bag";
     }
     return (

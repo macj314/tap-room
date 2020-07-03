@@ -12,6 +12,7 @@ function BagList(props){
           name={bag.name}
           roast={bag.roast}
           price={bag.price}
+          stock={bag.stock}
           id={bag.id}
           key={bag.id}/>
       )}
