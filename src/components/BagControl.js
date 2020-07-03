@@ -51,21 +51,22 @@ class BagControl extends React.Component {
     });
   }
 
-  handleEditClick = () => {
-    console.log("handleEditClick reached!");
-    this.setState({editing: true});
+  handleBrewCoffee = (id) => {
+    const selectedBag = this.state.masterBagList.filter(bag => bag.id === id);
+    selectedBag.stock -= 0.36;
+    const updatedList = this.state.masterBagList.filter(bag => bag.id === id);
   }
 
-  handleEditingBagInList = (bagToEdit) => {
-    const editedMasterBagList = this.state.masterBagList
-      .filter(bag => bag.id !== this.state.selectedBag.id)
-      .concat(bagToEdit);
-    this.setState({
-        masterBagList: editedMasterBagList,
-        editing: false,
-        selectedBag: null
-      });
-  }
+  // handleEditingBagInList = (bagToEdit) => {
+  //   const editedMasterBagList = this.state.masterBagList
+  //     .filter(bag => bag.id !== this.state.selectedBag.id)
+  //     .concat(bagToEdit);
+  //   this.setState({
+  //       masterBagList: editedMasterBagList,
+  //       editing: false,
+  //       selectedBag: null
+  //     });
+  // }
 
   render(){
     let currentlyVisibleState = null;
