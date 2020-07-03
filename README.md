@@ -6,10 +6,13 @@
 
 ## Description
 
-__
+_This is a react application that implements CRUD functionality. Users should be able to Create, Read, Update, and Delete bags of coffee._
 
 ## Setup/Installation Requirements
 
+1. Clone this repository.
+2. Open terminal into the root directory of this project and run: `npm start`
+3. A new tab should open in your browser.
 
 ## Known Bugs
 
