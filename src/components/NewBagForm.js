@@ -7,14 +7,14 @@ function NewBagForm(props){
 
   function handleNewBagFormSubmission(event) {
     event.preventDefault();
-    props.onNewBagCreation({names: event.target.name.value, location: event.target.roast.value, id: v4()});
+    props.onNewBagCreation({name: event.target.name.value, roast: event.target.roast.value, id: v4()});
   }
 
   return (
     <React.Fragment>
       <ReusableForm 
         formSubmissionHandler={handleNewBagFormSubmission}
-        buttonText="Help!" />
+        buttonText="Add Coffee" />
     </React.Fragment>
   );
 }

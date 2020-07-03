@@ -7,7 +7,7 @@ function EditBagForm(props) {
 
   function handleEditBagFormSubmission(event) {
     event.preventDefault();
-    props.onEditBag({ names: event.target.names.value, location: event.target.location.value, id: bag.id });
+    props.onEditBag({ name: event.target.name.value, roast: event.target.roast.value, id: bag.id });
   }
 
   return (

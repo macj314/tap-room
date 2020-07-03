@@ -9,8 +9,8 @@ function BagList(props){
       {props.bagList.map((bag) =>
         <Bag
           whenBagClicked = { props.onBagSelection }
-          names={bag.name}
-          location={bag.roast}
+          name={bag.name}
+          roast={bag.roast}
           id={bag.id}
           key={bag.id}/>
       )}
