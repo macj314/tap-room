@@ -20,9 +20,13 @@ There are no known bugs at the time of this update.
 
 ## Technologies Used
 
-
+* React
+* Javascript
+* Node Package Manager
 
 ## Specs
+
+![diagram](public/component-diagram.drawio.png)
 
 
 
