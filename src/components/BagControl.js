@@ -83,7 +83,7 @@ class BagControl extends React.Component {
       <BagDetail 
         bag = {this.state.selectedBag} 
         onClickingDelete = {this.handleDeletingBag} 
-        onClickingEdit = {this.handleEditClick} />
+        onClickingBrewCoffee = {this.handleBrewCoffee} />
         buttonText = "Return to Bag List";
     }
     else if (this.state.formVisibleOnPage) {
