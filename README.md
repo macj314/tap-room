@@ -11,7 +11,7 @@ _This is a react application that implements CRUD functionality. Users should be
 ## Setup/Installation Requirements
 
 1. Clone this repository.
-2. Open terminal into the root directory of this project and run: `npm start`
+2. Open terminal into the root directory of this project and run: `npm install` <br>then: `npm start`
 3. A new tab should open in your browser.
 
 ## Known Bugs
